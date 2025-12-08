@@ -1,1 +1,3 @@
-# HK4den.github.io
+**Name:** Kaden Huckeba
+**Project Description:** A responsive resume site built using HTML and CSS
+**Live Site:** 
