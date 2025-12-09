@@ -1,0 +1,221 @@
+/* CSS that affects the whole page */
+
+.m-plus-rounded-1c-regular {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #f7f7fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+/* Colors that go all over and other variables */
+
+:root {
+    --accent: #7b3fe4;
+    --accent-dark: #5324a8;
+    --accent-light: #efe6ff;
+    --bg: #f7f7fa;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --border: #d9d9e6;
+
+    --space-s: 0.5rem;
+    --space-m: 1rem;
+    --space-l: 2rem;
+    --space-xl: 4rem;
+}
+
+/* CSS affecting the header*/
+
+header {
+    text-align: center;
+    padding: var(--space-xl) var(--space-m) var(--space-l);
+}
+
+header h1 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 2rem;
+    color: var(--accent-dark);
+    margin-bottom: var(--space-s);
+}
+
+header h2 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+/* CSS affecting the nav*/
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-m);
+    background-color: var(--accent-light);
+    padding: var(--space-m);
+    border-radius: 12px;
+    margin-bottom: var(--space-xl);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent-dark);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+
+/* CSS affecting the main*/
+
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: var(--space-xl);
+}
+
+section h2 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 1.6rem;
+    color: var(--accent-dark);
+    margin-bottom: var(--space-m);
+}
+
+/* CSS affecting the about me*/
+
+#about img {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: var(--space-m) auto;
+    border-radius: 12px;
+}
+
+/* CSS affecting the skills area*/
+
+#skills h3 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-s);
+    color: var(--accent-dark);
+}
+
+#skills ul {
+    margin-left: 1.2rem;
+    margin-bottom: var(--space-m);
+}
+
+/* CSS affecting the articles/projects*/
+
+.projectarticles {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: var(--space-m);
+    margin-bottom: var(--space-l);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.projectarticles img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: var(--space-m);
+}
+
+.projectarticles h3 {
+    font-family: "Parkinsans", sans-serif;
+    font-size: 1.4rem;
+    color: var(--accent-dark);
+    margin-bottom: var(--space-s);
+    text-align: center;
+}
+
+.projectarticles p {
+    margin-bottom: var(--space-s);
+}
+
+.projectarticles a {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.projectarticles a:hover {
+    color: var(--accent-dark);
+}
+
+/* CSS affecting the contact me*/
+
+#contact ul {
+    margin-left: 1rem;
+}
+
+#contact li {
+    margin-bottom: var(--space-s);
+}
+
+/* CSS affecting the footer*/
+
+footer {
+    text-align: center;
+    padding: var(--space-l) 0;
+    color: var(--accent-dark);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+/* CSS media queries for different resolutioned screens*/
+/* Requirements says 3 layouts are to be accounted for and because the site is made with mobile prioritized i believe i just need 2 media queries*/
+
+/* Tablet */
+@media (min-width: 768px) { 
+    nav {
+        gap: var(--space-l);
+        padding: var(--space-m) var(--space-l);
+    }
+
+    .projectarticles {
+        padding: var(--space-l);
+    }
+
+    #projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-l);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 1.4rem;
+    }
+}
