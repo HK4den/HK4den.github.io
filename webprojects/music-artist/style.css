@@ -1,0 +1,157 @@
+/* I apologize if the colors are off-putting or weird, I'm using theming from previous works of machine girl for the colors and even one of their websites for their music. Sorry if the colors dock a point. */
+
+/* Kaden Huckeba 10/27*/
+
+/* Makes the header have a border, have padding, and be oblique */
+h1 {
+    border: 5pt outset #f233cf;
+    font-style: oblique;
+    padding: 5pt;
+    letter-spacing: 5pt;
+    text-align: center;
+}
+
+/* Centers the text here */
+h2,
+h3 {
+    text-align: center;
+}
+
+/* Makes links pink */
+a {
+    color: #f29dea;
+}
+
+/* Makes hovered links darker pink */
+a:hover {
+    color: #d10abd;
+}
+
+/* Makes visited links green */
+a:visited {
+    color: #19f71c;
+}
+
+/* Makes links stand out when selected via tab or maybe something else for accessibility, giving an outline */
+a:focus {
+    outline: 2px solid #f233cf;
+    outline-offset: 3px;
+}
+
+
+
+/* Makes the nav flex and a column */
+.navlist {
+    display: flex;
+    flex-direction: column;
+    background-color: #07010e;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+}
+
+/* Centers pics and makes them small enough to be able to fit in their areas and gives borders */
+img {
+    display: block;
+    width: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 4px;
+    border: 2px solid #f233cf;
+}
+
+/* Gives the body a specific color and makes all text unless otherwise chosen a specific color */
+body {
+    background-color: #010005;
+    color: #d6f5d5;
+}
+
+/* Makes the albums in a flex, makes it a column, and gives a gap between them */
+.album-s {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Gives the individual album things which are in the album flex their own stuff like background color, padding, and makes their background slightly rounded with a radius */
+.album {
+    background-color: #0a0324;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+/* Puts a pic of MG in the back, puts a border around them, makes them the background for this area, */
+.hero {
+    background-image: url("images/themachinegirls.webp");
+    background-size: cover;
+    background-position: top;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3pt solid #f233cf;
+    border-bottom: 3pt solid #f233cf;
+}
+
+/* Puts a backgroud on the text in the hero for visibility, changing a lot like color, radius, padding,changing text color, and making it oblique. */
+.herotext {
+    background-color: rgba(212, 36, 180, 0.425);
+    padding: 1pt;
+    border-radius: 2pt;
+    text-align: center;
+    font-style: oblique;
+    color: #f2f2f2;
+    font-weight: bolder;
+}
+
+/* Center everything inside the watch section and gives padding to the stuff */
+#watch {
+    text-align: center;
+    padding: 20px;
+}
+
+/* This makes the video position relative, adds padding, changes size stuff so it fits  */
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* for 16:9 its that % I guess */
+    height: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #f233cf;
+    border-radius: 4px;
+}
+
+/* Makes youtube video fill the box andremove any borders already there */
+.video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* if screen is bigger than 600 px wide (tablet+) it does a bunch of stuff */
+@media (min-width: 600px) {
+
+    /* Makes the navlist a row instead, has it centered, and adds a gap */
+    .navlist {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    /* Wraps the albums and tries to make them a row if it can fit but if it doesnt fit it just wraps and makes it below. Also centers stuff */
+    .album-s {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* two albums per row cause now its less than 50% */
+    .album {
+        width: 45%;
+    }
+}

@@ -1,0 +1,133 @@
+/* Boxes up everything */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gives everything a base background color, changes the font to arial, makes it a flexbox column, gives a min height, and has a line-height */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Was wondering if gradients were possible and low and behold they are! Fairly neat feature, I think it should be included at some point in the class tbh cause a subtle gradient can look really nice! :D */
+    background: linear-gradient(to right,
+            #dff1dc,
+            /* base green */
+            #f8f9fa,
+            /* the middle lighter color */
+            #dff1dc
+            /* base greenn */
+        );
+}
+
+/* Header stuff, centering and colors and borders and flex and padding */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2f0d9;
+    border-bottom: 3px solid #333;
+    padding: 10px;
+}
+
+/* Makes the logo small, have margins, and be a circle!!!!!!!! */
+.logo {
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Nav stuff, its a lot im too tired to explain when i dont thinkthe rubric says it needs it anymore */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7e6d1;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* makes the nav bar a color, have boldness, decoration, padding, and when hovered theres a color and if focused theres dashed stuff if you like tab on in */
+.navbar a {
+    color: #1b4332;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #95d5b2;
+}
+
+.navbar a:focus {
+    outline: 2px dashed #333;
+    outline-offset: 3px;
+}
+
+/* Stuff for the main content colors and borders and bla bla bla */
+.main-content {
+    background-color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+}
+
+/* Stuff for the welcome */
+.welcome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer stuff */
+.footer {
+    text-align: center;
+    background-color: #d7e6d1;
+    border-top: 2px solid #333;
+    padding: 10px;
+    margin-top: auto;
+}
+
+
+main {
+    flex: 1 0 auto;
+}
+
+/* cool font for the h1 to be using */
+.m-plus-rounded-1c-regular {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.schedule,
+.card-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-section .card {
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+/* Makes stuff different when screen is >=720 pixels */
+@media (min-width: 720px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: center;
+        /* keeps links together instead of far apart */
+        gap: 20px;
+    }
+}
