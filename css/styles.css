@@ -1,9 +1,9 @@
 /* CSS that affects the whole page */
 
 .m-plus-rounded-1c-regular {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 * {
@@ -24,7 +24,14 @@ body {
     padding: 0 1rem;
 }
 
-/* Colors that go all over and other variables */
+a:hover,
+a:focus-visible {
+    background-color:#e0ceff;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Colors that go all over and other variables for sizes */
 
 :root {
     --accent: #7b3fe4;
@@ -45,7 +52,7 @@ body {
 
 header {
     text-align: center;
-    padding: var(--space-xl) var(--space-m) var(--space-l);
+    padding: var(--space-l) var(--space-m) var(--space-l);
 }
 
 header h1 {
@@ -59,29 +66,40 @@ header h2 {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-size: 1.2rem;
     color: var(--accent);
+    text-decoration: underline;
 }
 
 /* CSS affecting the nav*/
 
 nav {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: var(--space-m);
+    gap: var(--space-s);
     background-color: var(--accent-light);
     padding: var(--space-m);
     border-radius: 12px;
-    margin-bottom: var(--space-xl);
+    margin: 0 auto var(--space-xl);
+    max-width: 480px;
 }
+
+
 
 nav a {
     text-decoration: none;
     color: var(--accent-dark);
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 600;
+    padding: 0.3rem 0.9rem;
+    border-radius: 1000px;
+    text-align: center;
 }
+
 
 nav a:hover {
     color: var(--accent);
+    text-decoration: underline;
 }
 
 
@@ -94,6 +112,19 @@ main {
 
 section {
     margin-bottom: var(--space-xl);
+    padding: var(--space-l) var(--space-m);
+    border-radius: 12px;
+}
+
+/* Sections that are odd have diff backgroujnds */
+section:nth-of-type(odd) {
+    background-color: #ffffffbe;
+}
+
+/* Sections that are even have diff backgrounds */
+section:nth-of-type(even) {
+    background-color: var(--accent-light);
+    border: 1px solid var(--border);
 }
 
 section h2 {
@@ -101,6 +132,7 @@ section h2 {
     font-size: 1.6rem;
     color: var(--accent-dark);
     margin-bottom: var(--space-m);
+    text-align: center;
 }
 
 /* CSS affecting the about me*/
@@ -111,6 +143,14 @@ section h2 {
     display: block;
     margin: var(--space-m) auto;
     border-radius: 12px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 /* CSS affecting the skills area*/
@@ -127,6 +167,17 @@ section h2 {
     margin-bottom: var(--space-m);
 }
 
+.skills-columns {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+.skills-column ul {
+    margin-left: 1.2rem;
+    margin-bottom: var(--space-m);
+}
+
 /* CSS affecting the articles/projects*/
 
 .projectarticles {
@@ -135,7 +186,13 @@ section h2 {
     border-radius: 16px;
     padding: var(--space-m);
     margin-bottom: var(--space-l);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.projectarticles:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .projectarticles img {
@@ -188,10 +245,12 @@ footer {
 /* Requirements says 3 layouts are to be accounted for and because the site is made with mobile prioritized i believe i just need 2 media queries*/
 
 /* Tablet */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     nav {
+        flex-direction: row;
         gap: var(--space-l);
         padding: var(--space-m) var(--space-l);
+        max-width: none;
     }
 
     .projectarticles {
@@ -216,6 +275,35 @@ footer {
     }
 
     header h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
+
+     nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about img {
+        margin-bottom: var(--space-m);
+    }
+
+    #about p {
+        text-align: center;
+    }
+
+    .skills-columns {
+        flex-direction: row;
+    }
+
+    .skills-column {
+        flex: 1;
+    }
+
 }
